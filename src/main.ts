@@ -11,6 +11,7 @@ export class TodoStack extends Stack {
 
     const vpc = new ec2.Vpc(this, 'Vpc', {
       cidr: '10.0.0.0/16',
+      natGateways: 1,
       subnetConfiguration: [{
         subnetType: ec2.SubnetType.PUBLIC,
         name: 'public',
